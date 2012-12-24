@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+#!/usr/local/bin/python3
+
 # oop3.py by Bill Weinman <http://bw.org/contact/>
 # OOP/Polymorphism example in Python
 # This is an exercise file from Python 3 Essential Training on lynda.com
