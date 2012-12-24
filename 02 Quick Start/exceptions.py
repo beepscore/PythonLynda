@@ -4,7 +4,12 @@
 # This is an exercise file from Python 3 Essential Training on lynda.com
 # Copyright 2010 The BearHeart Gorup, LLC
 
-fh = open('xlines.txt')
-for line in fh.readlines():
-    print(line)
+try:
+    fh = open('xlines.txt')
+    for line in fh.readlines():
+        print(line)
 
+except:
+    print("something bad happened")
+
+print("after badness")
