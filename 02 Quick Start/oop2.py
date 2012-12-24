@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/local/bin/python3
 
 class AnimalActions:
     def quack(self): return self.strings['quack']
