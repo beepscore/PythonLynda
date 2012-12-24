@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/local/bin/python3
 
 # read the lines from the file
 fh = open('lines.txt')
