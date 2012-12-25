@@ -13,6 +13,22 @@
 def main():
     print("This is the syntax.py file.")
     egg()
+    a = 1
+    print(type(a), a)
+    b = "one"
+    print(type(b), b)
+    
+    #swap
+    print("a:{0} b:{1}".format(a, b))
+    a, b = b, a
+    print("a:{0} b:{1}".format(a, b))
+
+    # tuple
+    g = (3, 4, 5, 6)
+    print(g)
+    # list
+    h = [3, 4, 5, 6]
+    print(h)
 
 def egg():
     print("egg")
