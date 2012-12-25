@@ -6,12 +6,12 @@
 
 def main():
     print("This is the syntax-functions.py file.")
-    some_func()
-    some_func()
-    some_func()
+    some_func(1)
+    some_func(3)
+    some_func(5)
 
-def some_func():
-    for i in range(10):
+def some_func(range_start):
+    for i in range(range_start, 10):
         print(i, end = ' ')
     print()
 
