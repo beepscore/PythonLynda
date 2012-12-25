@@ -7,10 +7,11 @@
 def main():
     print("This is the syntax-functions.py file.")
     some_func(1)
-    some_func(3)
+    some_func()
     some_func(5)
 
-def some_func(range_start):
+#start_range with default value
+def some_func(range_start=7):
     for i in range(range_start, 10):
         print(i, end = ' ')
     print()
