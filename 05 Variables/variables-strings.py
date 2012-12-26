@@ -8,6 +8,8 @@ def main():
     print(s)
     anEscapedString = 'This is a\nstring!'
     print(anEscapedString)
+
+    # raw strings are sometimes used for regular expressions
     aRawString = r'This is a\nstring!'
     print(aRawString)
 
