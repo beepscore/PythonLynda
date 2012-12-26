@@ -6,5 +6,9 @@
 def main():
     s = 'This is a string!'
     print(s)
+    anEscapedString = 'This is a\nstring!'
+    print(anEscapedString)
+    aRawString = r'This is a\nstring!'
+    print(aRawString)
 
 if __name__ == "__main__": main()
