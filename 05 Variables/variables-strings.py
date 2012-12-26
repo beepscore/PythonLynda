@@ -13,4 +13,20 @@ def main():
     aRawString = r'This is a\nstring!'
     print(aRawString)
 
+    aNumber = 42
+    # Python 2 style (deprecated)
+    formattedString = 'This is a string with %s' % aNumber
+    print(formattedString)
+    # In Python 3 call string object's method format()
+    formattedString = 'This is a string with {}'.format(aNumber)
+    print(formattedString)
+
+    # triple quote for multiple lines. Backslash escapes the leading newline.
+    multiLineString = '''\
+one
+two
+three'''
+    print(multiLineString)        
+            
+
 if __name__ == "__main__": main()
