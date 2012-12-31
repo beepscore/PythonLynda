@@ -10,4 +10,17 @@ def main():
     else:
         print('this is false')
 
+    v = 'seven'
+    # one and only one of these will execute
+    # similar to other languages' switch statement
+    if 'one' == v:
+        print('v is one')
+    elif 'two' == v:
+        print('v is two')
+    elif 'three' == v:
+        print('v is two')
+    else:
+        # default case
+        print('v is some other thing')
+
 if __name__ == "__main__": main()
