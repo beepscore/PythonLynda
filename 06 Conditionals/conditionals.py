@@ -23,4 +23,9 @@ def main():
         # default case
         print('v is some other thing')
 
+    # conditional expression, similar to C ternary operator
+    v = 'this is True' if a < b else 'this is False'
+    print('v', v)
+
+
 if __name__ == "__main__": main()
