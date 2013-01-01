@@ -14,11 +14,15 @@ def main():
         # After setting end, Janus Macvim Syntastic plugin warns syntax error but script runs ok.
         print(index, line, end='')
 
-    # In python all container objects (tuples, strings) are iterators
+    # In python all container objects (tuples, lists, strings) are iterators
     aList = [1, 2, 3, 4]
     for index, item in enumerate(aList):
         print(item, end='')
         # if on last item don't append space
+        # In python len() is a function, not an object method
+        # References:
+        # http://www.effbot.org/pyfaq/why-does-python-use-methods-for-some-functionality-e-g-list-index-but-functions-for-other-e-g-len-list.htm
+        # http://lucumr.pocoo.org/2011/7/9/python-and-pola/
         if index < (len(aList) - 1):
             print(' ', end='')
     print()
