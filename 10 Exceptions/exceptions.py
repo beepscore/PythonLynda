@@ -14,7 +14,7 @@ def main():
     except FileNotFoundError as fileError:
         print('Couln\'t open the file.', fileError)
 
-    # catch the exception defined in readfile
+    # catch exception raised in readfile
     except ValueError as valueError:
         print('Bad filename.', valueError)
 
@@ -24,8 +24,11 @@ def main():
 
 def readfile(filename):
     if not filename.endswith('.txt'):
-        # raise our own exception, name it ValueError
+        # Python best practice: use built-in exceptions such as ValueError.
+        # You could define your own, but generally not necessary to use non-standard exceptions.
+        # http://docs.python.org/3/library/exceptions.html
         raise ValueError('Filename must end with .txt')
+
     else:
         fh = open(filename)
         return fh.readlines()
