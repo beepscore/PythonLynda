@@ -48,7 +48,6 @@ def main():
         match = re.search('(Len|Neverm|neverm)ore', line)
         if match:
             # replace
-            #print(re.sub('(Len|Neverm|neverm)ore', 'Al Gore', match.group()))
             print(line.replace(match.group(), 'Al Gore'), end='')
     print('-------------------------------')
     print()
