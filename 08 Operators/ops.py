@@ -6,9 +6,12 @@
 
 def main():
     print("This is the ops.py file.")
+    print()
 
     #########################################
-    # bitwise operators
+
+    print('bitwise operators')
+
     b(5)
 
     x, y = 0x55, 0xaa
@@ -41,7 +44,7 @@ def main():
 
     #########################################
 
-    # Comparison operators
+    print('Comparison operators')
     print(5 <= 3)
     c, d = 5, 6
 
@@ -61,9 +64,14 @@ def main():
     print('f:{}'.format(f))
     print('g:{}'.format(g))
     print(g is f)
+    print()
 
     #########################################
 
+    print('boolean operators')
+    print(True and False)
+
+    print()
 
 def b(n):
     print('{:08b}'.format(n))
