@@ -8,7 +8,8 @@ import re
 def main():
 
     # compile regular expression pattern instead of interpretively evaluating each iteration.
-    pattern = re.compile('(Len|Neverm)ore')
+    # ignore case in order to match Nevermore or nevermore
+    pattern = re.compile('(Len|Neverm)ore', re.IGNORECASE)
 
     fh = open('raven.txt')
     for line in fh:
@@ -27,22 +28,11 @@ def main():
     print('-------------------------------')
     print()
 
-    print('widen match')
-    patternNn = re.compile('(Len|Neverm)ore')
-
-    fh = open('raven.txt')
-    for line in fh:
-        match = re.search(patternNn, line)
-        if match:
-            print(match.group())
-    print('-------------------------------')
-    print()
-
     print('substitute, i.e. search and replace')
     fh = open('raven.txt')
     for line in fh:
         # print every line
-        print(re.sub(patternNn, 'Al Gore', line), end='')
+        print(re.sub(pattern, 'Al Gore', line), end='')
     print('-------------------------------')
     print()
 
@@ -50,7 +40,7 @@ def main():
     fh = open('raven.txt')
     for line in fh:
         # search
-        match = re.search(patternNn, line)
+        match = re.search(pattern, line)
         if match:
             # replace
             print(line.replace(match.group(), 'Al Gore'), end='')
