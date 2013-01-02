@@ -31,6 +31,7 @@ def main():
 
     fh = open('raven.txt')
     for line in fh:
+        # print every line
         # substitute, i.e. search and replace
         print(re.sub('(Len|Neverm|neverm)ore', 'Al Gore', line), end='')
     print()
