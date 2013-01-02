@@ -87,7 +87,31 @@ def main():
     print()
 
     #########################################
+    
+    print('range(start, stop[, step]) is a type')
+    print('range doesn\'t include element specified by stop')
+    # http://docs.python.org/3/library/stdtypes.html#typesseq-range
 
+    myList = []
+    # shorthand fill list 0-19
+    myList[:] = range(20)
+    print(myList)
+    print()
+
+    print('Slice operator')
+    print('Returns a slice object representing the set of indices specified by a range')
+    # http://docs.python.org/3/library/functions.html#slice
+
+    mySliceOne = myList[1:10]
+    print('myList[1:10]', mySliceOne)
+
+    mySliceTwo = myList[1:20:4]
+    print('myList[1:20:4]', mySliceTwo)
+    print()
+
+    print('object returned from slice can be used as an iterator')
+    for element in mySliceTwo: print(element)
+    print()
 def b(n):
     print('{:08b}'.format(n))
 
