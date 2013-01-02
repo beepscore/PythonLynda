@@ -56,10 +56,12 @@ def main():
     print(c is d)
     print(c is not d)
 
+    # tuples use () and are immutable,  lists use [] and are mutable.
+    # list
     f = [3]
     g = f
     print(g is f)
-    # tuple is mutable, change value 0
+    # change value 0
     f[0] = 4
     print('f:{}'.format(f))
     print('g:{}'.format(g))
