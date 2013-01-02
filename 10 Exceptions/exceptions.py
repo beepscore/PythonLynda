@@ -7,14 +7,27 @@ def main():
 
     try:
         # for this exercise, purposely misspell file name in order to create an error.
-        # fh = open('lines.txt')
-        fh = open('xlines.txt')
+        # lines = readfile('lines.txt')
+        # lines = readfile('xlines.txt')
+        lines = readfile('xlines.doc')
 
-    # catch only FileNotFoundError
     except FileNotFoundError as fileError:
         print('Couln\'t open the file.', fileError)
+
+    # catch the exception defined in readfile
+    except ValueError as valueError:
+        print('Bad filename.', valueError)
+
     else:
         # strip removes any trailing newlines from end of string, then print adds one.
-        for line in fh: print(line.strip())
+        for line in lines: print(line.strip())
+
+def readfile(filename):
+    if not filename.endswith('.txt'):
+        # raise our own exception, name it ValueError
+        raise ValueError('Filename must end with .txt')
+    else:
+        fh = open(filename)
+        return fh.readlines()
 
 if __name__ == "__main__": main()
