@@ -68,10 +68,23 @@ def main():
 
     #########################################
 
-    print('boolean operators')
+    print('Boolean operators')
     print(True and False)
+    print(True or False)
+
+    j = 'zero'
+    k = 'one'
+    print('compare alphabetical order')
+    print("'{}' > '{}' is '{}'".format(j, k, j > k))
+
+    if (1>0) and (j>k):
+        print('and statement True')
+    else:
+        print('and statement False')
 
     print()
+
+    #########################################
 
 def b(n):
     print('{:08b}'.format(n))
