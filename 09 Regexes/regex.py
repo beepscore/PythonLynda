@@ -7,9 +7,12 @@ import re
 
 def main():
 
+    # compile regular expression pattern instead of interpretively evaluating each iteration.
+    pattern = re.compile('(Len|Neverm)ore')
+
     fh = open('raven.txt')
     for line in fh:
-        if re.search('(Len|Neverm)ore', line):
+        if re.search(pattern, line):
             print(line, end='')
     print('-------------------------------')
     print()
@@ -18,16 +21,18 @@ def main():
     # Does python automatically close file when iterator reaches the end?
     fh = open('raven.txt')
     for line in fh:
-        match = re.search('(Len|Neverm)ore', line)
+        match = re.search(pattern, line)
         if match:
             print(match.group())
     print('-------------------------------')
     print()
 
     print('widen match')
+    patternNn = re.compile('(Len|Neverm)ore')
+
     fh = open('raven.txt')
     for line in fh:
-        match = re.search('(Len|Neverm|neverm)ore', line)
+        match = re.search(patternNn, line)
         if match:
             print(match.group())
     print('-------------------------------')
@@ -37,7 +42,7 @@ def main():
     fh = open('raven.txt')
     for line in fh:
         # print every line
-        print(re.sub('(Len|Neverm|neverm)ore', 'Al Gore', line), end='')
+        print(re.sub(patternNn, 'Al Gore', line), end='')
     print('-------------------------------')
     print()
 
@@ -45,7 +50,7 @@ def main():
     fh = open('raven.txt')
     for line in fh:
         # search
-        match = re.search('(Len|Neverm|neverm)ore', line)
+        match = re.search(patternNn, line)
         if match:
             # replace
             print(line.replace(match.group(), 'Al Gore'), end='')
