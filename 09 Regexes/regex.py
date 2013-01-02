@@ -8,6 +8,7 @@ import re
 def main():
 
     # compile regular expression pattern instead of interpretively evaluating each iteration.
+    # compiling allows use of re.IGNORECASE and method pattern.sub()
     # ignore case in order to match Nevermore or nevermore
     pattern = re.compile('(Len|Neverm)ore', re.IGNORECASE)
 
@@ -32,7 +33,10 @@ def main():
     fh = open('raven.txt')
     for line in fh:
         # print every line
-        print(re.sub(pattern, 'Al Gore', line), end='')
+        # pattern.sub uses regular expression module to perform substitution.
+        # regular expression engine substitution is faster than string object's substitution.
+        # print(re.sub(pattern, 'Al Gore', line), end='')        
+        print(pattern.sub('Al Gore', line), end='')
     print('-------------------------------')
     print()
 
