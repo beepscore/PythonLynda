@@ -6,6 +6,7 @@
 import re
 
 def main():
+
     fh = open('raven.txt')
     for line in fh:
         if re.search('(Len|Neverm)ore', line):
@@ -26,6 +27,12 @@ def main():
         match = re.search('(Len|Neverm|neverm)ore', line)
         if match:
             print(match.group())
+    print()
+
+    fh = open('raven.txt')
+    for line in fh:
+        # substitute, i.e. search and replace
+        print(re.sub('(Len|Neverm|neverm)ore', 'Al Gore', line), end='')
     print()
 
 if __name__ == "__main__": main()
