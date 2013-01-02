@@ -6,6 +6,9 @@
 
 def main():
     print("This is the ops.py file.")
+
+    #########################################
+    # bitwise operators
     b(5)
 
     x, y = 0x55, 0xaa
@@ -34,6 +37,32 @@ def main():
     #ones complement, operates on implementation word size, > 8 bits 
     b(~x)
 
+    print()
+
+    #########################################
+
+    # Comparison operators
+    print(5 <= 3)
+    c, d = 5, 6
+
+    print(c == d)
+    # assignment not allowed inside print
+    # print(c = d)
+
+    # is returns true if both variables are the same object. checks id() for equality
+    print(c is d)
+    print(c is not d)
+
+    f = [3]
+    g = f
+    print(g is f)
+    # tuple is mutable, change value 0
+    f[0] = 4
+    print('f:{}'.format(f))
+    print('g:{}'.format(g))
+    print(g is f)
+
+    #########################################
 
 
 def b(n):
