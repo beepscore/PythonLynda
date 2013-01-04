@@ -23,8 +23,15 @@ def testFuncTwo(number, another = None, oneMore = 75):
     if another is None : another = 112
     print('testFuncTwo:', number, another, oneMore)
 
-# *args is a tuple of arbitrary length
+# args is a tuple of arbitrary length
 def testFuncThree(this, that, other, *args):
+
+    # syntastic warns syntax error but it runs.
+    # output: testFuncThree: 1 2 3 42 43 45 46
+    print('testFuncThree:', this, that, other, *args)
+
+    # this prints args as a tuple
+    # output: testFuncThree: 1 2 3 (42, 43, 45, 46)
     print('testFuncThree:', this, that, other, args)
     for n in args: print(n, end = ' ')
 
