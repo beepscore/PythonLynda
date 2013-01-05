@@ -12,6 +12,8 @@ def main():
     # caller names the arguments, not the function def
     funcWithKeywordArgs(one = 1, two = 2, four = 42)
 
+    print(fuctionThatReturnsSomething(89))
+
 
 def emptyFunc():
     # pass acts like a nop, can be used to stub a function or method body and avoid syntax error.
@@ -51,5 +53,10 @@ def funcWithKeywordArgs(**kwargs):
     # kwargs dictionary items may appear in any order
     for key in kwargs:
         print(key, kwargs[key])
+
+
+def fuctionThatReturnsSomething(number):
+    return ('fuctionThatReturnsSomething:', number)
+
 
 if __name__ == "__main__": main()
