@@ -21,24 +21,24 @@ def emptyFunc():
 
 # assigning default parameter value in function definition means caller can omit it.
 def testFuncOne(number, another = 43, oneMore = 75):
-    print('testFuncOne:', number, another, oneMore)
+    print('testFuncOne', number, another, oneMore)
 
 # None is a system singleton object
 def testFuncTwo(number, another = None, oneMore = 75):
-    print('testFuncTwo:', number, another, oneMore)
+    print('testFuncTwo', number, another, oneMore)
     if another is None : another = 112
-    print('testFuncTwo:', number, another, oneMore)
+    print('testFuncTwo', number, another, oneMore)
 
 # args is a tuple of arbitrary length
 def testFuncThree(this, that, other, *args):
 
     # syntastic warns syntax error but it runs.
     # output: testFuncThree: 1 2 3 42 43 45 46
-    print('testFuncThree:', this, that, other, *args)
+    print('testFuncThree', this, that, other, *args)
 
     # this prints args as a tuple
     # output: testFuncThree: 1 2 3 (42, 43, 45, 46)
-    print('testFuncThree:', this, that, other, args)
+    print('testFuncThree', this, that, other, args)
 
     # tuple will print in order
     for n in args: print(n, end = ' ')
@@ -48,7 +48,7 @@ def testFuncThree(this, that, other, *args):
 # kwargs is a dictionary, caller specifies keys
 # ==> Function doesn't know names before it is called.
 def funcWithKeywordArgs(**kwargs):
-    print('funcWithKeywordArgs:', kwargs['one'], kwargs['two'], kwargs['four'])
+    print('funcWithKeywordArgs', kwargs['one'], kwargs['two'], kwargs['four'])
 
     # kwargs dictionary items may appear in any order
     for key in kwargs:
@@ -56,7 +56,7 @@ def funcWithKeywordArgs(**kwargs):
 
 
 def fuctionThatReturnsSomething(number):
-    return ('fuctionThatReturnsSomething:', number)
+    return ('fuctionThatReturnsSomething', number)
 
 
 if __name__ == "__main__": main()
