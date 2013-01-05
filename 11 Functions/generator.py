@@ -27,23 +27,24 @@ def main():
     # Call with four arguments
     #for i in inclusive_range(3, 12, 2, 5):
         #print(i, end = ' ')
-    #print()
+
 
 # Python standard range is non-inclusive of stop.
 # Define an inclusive range
-# inclusive_range_start_stop_step() uses "yield". It's a generator function.
 # It returns an iterator object that can be used in a for loop.
 # Require all three arguments
 def inclusive_range_start_stop_step(start, stop, step):
     i = start
     while i <= stop:
-        # yield returns a value, then resumes loop
+        # yield returns a value, then resumes loop. It's a generator.
         yield i
         i += step
 
+
 # Allow call with one argument stop, 
 # two arguments start, stop, 
-# or three arguments
+# or three arguments start, stop, step.
+# returns an iterator object
 def inclusive_range(*args):
 
     numberOfArguments = len(args)
