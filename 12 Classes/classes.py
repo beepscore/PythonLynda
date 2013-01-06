@@ -4,6 +4,11 @@
 # Copyright 2010 The BearHeart Group, LLC
 
 class Duck:
+
+    def __init__(self):
+        print('constructor')
+
+
     def quack(self):
         print('Quaaack!')
 
@@ -12,7 +17,7 @@ class Duck:
 
 def main():
 
-    #instantiate a Duck
+    #instantiate a Duck, calls the constructor __init__
     donald = Duck()
     print(donald)
 
