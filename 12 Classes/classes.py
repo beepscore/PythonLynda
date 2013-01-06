@@ -5,10 +5,22 @@
 
 class Duck:
 
-    def __init__(self, value):
-        self._value = value
+    def __init__(self, value, color = 'white'):
         print('constructor')
+        self._value = value
+        self._color = color
 
+    # Accessors enable an object to manage it's own concerns.
+    def get_color(self):
+        return self._color
+
+    # This setter checks input validity.
+    # Some setters set the instance variable and then update a database.
+    def set_color(self, color):
+        if type(color) is not str:
+                print('color must be a string')
+        else:
+            self._color = color
 
     def quack(self):
         print('Quaaack!', self._value)
@@ -32,9 +44,18 @@ def main():
 
     print()
 
-    # can access an object's instance variable directly, but best practice is to use a getter and setter.
-    print(donald._value)
-    donald._value = 'boo'
-    print(donald._value)
+    # Can access an object's instance variable directly, but best practice is to use a getter and setter.
+    donald._color = 'blue'
+    print(donald._color)
+    # Accessing ivar directly enables accidentally setting _color to an invalid value.
+    donald._color = 12
+    print(donald._color)
+
+    print()
+    donald.set_color('green')
+    print(donald.get_color())
+    # Duck set_color() won't set color to a number.
+    donald.set_color(12)
+    print(donald._color)
 
 if __name__ == "__main__": main()
