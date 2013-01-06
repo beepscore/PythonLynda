@@ -30,16 +30,25 @@ class Duck:
 
 
 class Wombat:
-    # use keyword arguments, this scales better as number of arguments increases
+    # use keyword arguments dictionary, this technique scales well as number of arguments increases
     def __init__(self, **kwargs):
         self._variables = kwargs
 
     # Accessors enable an object to manage it's own concerns.
-    def get_color(self):
-        # if _variables doesn't have a key color, this statement would cause a KeyError
-        # return self._variables['color']
-        # if color isn't found, add key/value pair with default value None.
-        return self._variables.get('color', None)
+    def get_variable(self, key):
+        # if _variables doesn't have the key, this statement would cause a KeyError
+        # return self._variables[key]
+        # if key isn't found, add key/value pair with default value None.
+        return self._variables.get(key, None)
+
+    def set_variable(self, key, value):
+        if key == 'color':
+            # use custom setter for color
+            set_color(color)
+        else:
+            # use 'generic' setter
+            self._variables[key] = value
+
 
     # This setter checks input validity.
     # Some setters set the instance variable and then update a database.
@@ -83,13 +92,11 @@ def main():
     print()
 
     willy = Wombat()
-    print('willy', willy.get_color())
+    print('willy color:', willy.get_variable('color'))
     wanda = Wombat(color = 'blue')
-    print('wanda', wanda.get_color())
+    print('wanda color:', wanda.get_variable('color'))
 
     warren = Wombat(feet = 4)
-    #this works, but we are referencing the ivar because we don't have an accessor for feet.
-    # TODO: Add accessor for feet
-    print('warren', warren._variables['feet'])
+    print('warren feet:', warren.get_variable('feet'))
 
 if __name__ == "__main__": main()
