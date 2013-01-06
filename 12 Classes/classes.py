@@ -49,7 +49,6 @@ class Wombat:
             # use 'generic' setter
             self._variables[key] = value
 
-
     # This setter checks input validity.
     # Some setters set the instance variable and then update a database.
     def set_color(self, color):
@@ -57,7 +56,6 @@ class Wombat:
                 print('color must be a string')
         else:
             self._variables['color'] = color
-
             
 def main():
 
