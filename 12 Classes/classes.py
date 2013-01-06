@@ -32,12 +32,14 @@ class Duck:
 class Wombat:
     # use keyword arguments, this scales better as number of arguments increases
     def __init__(self, **kwargs):
-        # if color isn't found, add key/value pair with default value.
-        self._color = kwargs.get('color', 'white')
+        self._variables = kwargs
 
     # Accessors enable an object to manage it's own concerns.
     def get_color(self):
-        return self._color
+        # if _variables doesn't have a key color, this statement would cause a KeyError
+        # return self._variables['color']
+        # if color isn't found, add key/value pair with default value None.
+        return self._variables.get('color', None)
 
     # This setter checks input validity.
     # Some setters set the instance variable and then update a database.
@@ -45,7 +47,7 @@ class Wombat:
         if type(color) is not str:
                 print('color must be a string')
         else:
-            self._color = color
+            self._variables['color'] = color
 
             
 def main():
