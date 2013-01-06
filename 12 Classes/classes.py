@@ -87,4 +87,9 @@ def main():
     wanda = Wombat(color = 'blue')
     print('wanda', wanda.get_color())
 
+    warren = Wombat(feet = 4)
+    #this works, but we are referencing the ivar because we don't have an accessor for feet.
+    # TODO: Add accessor for feet
+    print('warren', warren._variables['feet'])
+
 if __name__ == "__main__": main()
