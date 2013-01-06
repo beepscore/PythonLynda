@@ -44,7 +44,7 @@ class Wombat:
     def set_variable(self, key, value):
         if key == 'color':
             # use custom setter for color
-            set_color(color)
+            self.set_color(value)
         else:
             # use 'generic' setter
             self._variables[key] = value
