@@ -44,18 +44,19 @@ def main():
 
     print()
 
-    # Can access an object's instance variable directly, but best practice is to use a getter and setter.
+    # It's possible to access an object's instance variable directly.
+    # However best practice is to use a getter and setter.
     donald._color = 'blue'
     print(donald._color)
     # Accessing ivar directly enables accidentally setting _color to an invalid value.
     donald._color = 12
     print(donald._color)
-
     print()
+
     donald.set_color('green')
     print(donald.get_color())
     # Duck set_color() won't set color to a number.
     donald.set_color(12)
-    print(donald._color)
+    print(donald.get_color())
 
 if __name__ == "__main__": main()
