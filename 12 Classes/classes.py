@@ -16,6 +16,7 @@ def main():
     donald = Duck()
     print(donald)
 
+    # method call implicitly supplies argument 'self', a reference to the caller
     donald.quack()
     donald.walk()
 
