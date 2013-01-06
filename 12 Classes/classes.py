@@ -28,6 +28,26 @@ class Duck:
     def walk(self):
         print('Walks like a duck.', self._value)
 
+
+class Wombat:
+    # use keyword arguments, this scales better as number of arguments increases
+    def __init__(self, **kwargs):
+        # if color isn't found, add key/value pair with default value.
+        self._color = kwargs.get('color', 'white')
+
+    # Accessors enable an object to manage it's own concerns.
+    def get_color(self):
+        return self._color
+
+    # This setter checks input validity.
+    # Some setters set the instance variable and then update a database.
+    def set_color(self, color):
+        if type(color) is not str:
+                print('color must be a string')
+        else:
+            self._color = color
+
+            
 def main():
 
     #instantiate a Duck, calls the constructor __init__
@@ -58,5 +78,11 @@ def main():
     # Duck set_color() won't set color to a number.
     donald.set_color(12)
     print(donald.get_color())
+    print()
+
+    willy = Wombat()
+    print('willy', willy.get_color())
+    wanda = Wombat(color = 'blue')
+    print('wanda', wanda.get_color())
 
 if __name__ == "__main__": main()
