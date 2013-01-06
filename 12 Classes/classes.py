@@ -93,6 +93,8 @@ def main():
     print('willy color:', willy.get_variable('color'))
     wanda = Wombat(color = 'blue')
     print('wanda color:', wanda.get_variable('color'))
+    wanda.set_variable('color', 'indigo')
+    print('wanda color:', wanda.get_variable('color'))
 
     warren = Wombat(feet = 4)
     print('warren feet:', warren.get_variable('feet'))
