@@ -3,7 +3,18 @@
 # This is an exercise file from Python 3 Essential Training on lynda.com
 # Copyright 2010 The BearHeart Group, LLC
 
-class Duck:
+class Animal:
+    def talk(self): print('I have something to say!')
+    def walk(self): print('Hey! I\'m walkin\' here!')
+    def clothes(self): print('I have nice clothes')
+
+
+class Dog(Animal):
+    # override super's definition
+    def clothes(self): print('I have brown and white fur')
+
+
+class Duck(Animal):
 
     def __init__(self, value, color = 'white'):
         print('constructor')
@@ -25,11 +36,13 @@ class Duck:
     def quack(self):
         print('Quaaack!', self._value)
 
+    # override super's definition, but call super also
     def walk(self):
+        super().walk()
         print('Walks like a duck.', self._value)
 
 
-class Wombat:
+class Wombat(Animal):
     # use keyword arguments dictionary, this technique scales well as number of arguments increases
     def __init__(self, **kwargs):
         self._variables = kwargs
@@ -98,5 +111,19 @@ def main():
 
     warren = Wombat(feet = 4)
     print('warren feet:', warren.get_variable('feet'))
+    print()
+
+    # Experiment with inheritance
+    donald.walk()
+    print()
+    donald.talk()
+    donald.quack()
+    donald.clothes()
+    donald.talk()
+    print()
+    
+    fido = Dog()
+    fido.walk()
+    fido.clothes()
 
 if __name__ == "__main__": main()
