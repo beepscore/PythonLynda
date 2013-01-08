@@ -4,14 +4,28 @@
 # Copyright 2010 The BearHeart Group, LLC
 
 class Animal:
-    def talk(self): print('I have something to say!')
-    def walk(self): print('Hey! I\'m walkin\' here!')
-    def clothes(self): print('I have nice clothes')
+    def clothes(self): 
+        print('I have nice clothes')
+
+    def talk(self): 
+        print('I have something to say!')
+
+    def walk(self): 
+        print('Hey! I\'m walkin\' here!')
 
 
 class Dog(Animal):
-    # override super's definition
-    def clothes(self): print('I have brown and white fur')
+    def bark(self):
+        print('Woof!') 
+    
+    def fur(self):
+        print('The dog has brown and white fur')
+
+    def quack(self):
+        print('The dog cannot quack')
+
+    def walk(self):
+        print('Walks like a dog.')
 
 
 class Duck(Animal):
@@ -33,7 +47,13 @@ class Duck(Animal):
         else:
             self._color = color
 
-    def quack(self):
+    def bark(self): 
+        print('The duck cannot bark') 
+
+    def fur(self): 
+        print('The duck has feathers')
+
+    def quack(self): 
         print('Quaaack!', self._value)
 
     # override super's definition, but call super also
@@ -70,6 +90,17 @@ class Wombat(Animal):
         else:
             self._variables['color'] = color
             
+
+def in_the_forest(anAnimal):
+    anAnimal.bark()
+    anAnimal.fur()
+
+
+def in_the_pond(duck):
+    duck.quack()
+    duck.walk()
+
+
 def main():
 
     #instantiate a Duck, calls the constructor __init__
@@ -113,17 +144,23 @@ def main():
     print('warren feet:', warren.get_variable('feet'))
     print()
 
-    # Experiment with inheritance
-    donald.walk()
-    print()
-    donald.talk()
-    donald.quack()
-    donald.clothes()
-    donald.talk()
-    print()
-    
+    # Experiment with inheritance and polymorphism
     fido = Dog()
-    fido.walk()
-    fido.clothes()
+
+    # Polymorphism - different classes can implement the same method differently
+    for aCritter in (donald, fido):
+        aCritter.bark()
+        aCritter.clothes()
+        aCritter.fur()
+        aCritter.quack()
+        aCritter.talk()
+        aCritter.walk()
+        print()
+
+    # python is loosely typed (duck typed).
+    # any object that implements the method will work.
+    in_the_forest(donald)
+    print()
+    in_the_pond(fido)
 
 if __name__ == "__main__": main()
