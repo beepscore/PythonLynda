@@ -26,4 +26,10 @@ def main():
     print(s.isdigit())
     print(s.isprintable())
 
+    # Python strings are immutable. stringWithNumbers is a different object than stringWithBraces
+    stringWithBraces = 'this is {}, that is {}'
+    stringWithNumbers = stringWithBraces.format(5, 42)
+    print(stringWithBraces, 'id(stringWithBraces):', id(stringWithBraces))
+    print(stringWithNumbers, 'id(stringWithNumbers):', id(stringWithNumbers))
+
 if __name__ == "__main__": main()
