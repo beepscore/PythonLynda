@@ -12,6 +12,8 @@ def main():
 
     # conditional assignment
     s = "less than" if a < b else "not less than"
-    print("a is {0} b".format(s))
+    # I think an earlier version of python 3 (3.1?) required number inside {}. 3.2 doesn't need it.
+    # print("a is {0} b".format(s))
+    print("a is {} b".format(s))
 
 if __name__ == "__main__": main()
