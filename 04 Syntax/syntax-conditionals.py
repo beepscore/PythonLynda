@@ -12,7 +12,8 @@ def main():
 
     # conditional assignment
     s = "less than" if a < b else "not less than"
-    # I think an earlier version of python 3 (3.1?) required number inside {}. 3.2 doesn't need it.
+    # Python 3.0 required positional or name indicator number inside {}.
+    # >= 3.1 will just infer from order. You can change order using positional indicator or name.
     # print("a is {0} b".format(s))
     print("a is {} b".format(s))
 
