@@ -32,4 +32,24 @@ def main():
     print(stringWithBraces, 'id(stringWithBraces):', id(stringWithBraces))
     print(stringWithNumbers, 'id(stringWithNumbers):', id(stringWithNumbers))
 
+    # format()
+
+    # Python 2.x used C style format specifiers. To print an object, you need to know and specify its type.
+    # Python 3.0 added string.format(). It uses repr to print any type of object, don't need to specify type.
+    # Python 3.0 required positional or name indicator number inside {}.
+    a, b = 5, 2
+    # Python 3.1 infers from order. You can change order using positional indicator or name.
+    print('a:{} b:{}'.format(a, b))
+
+    # format with positional indicator
+    print('a:{0} b:{1}'.format(a, b))
+    print('a:{1} b:{0}'.format(b, a))
+
+    # format with name indicator
+    print('a:{alpha} b:{beta}'.format(alpha = a, beta = b))
+
+    # format with dictionary
+    d = dict(alpha = a, beta = b)
+    print('a:{alpha} b:{beta}'.format(**d))
+
 if __name__ == "__main__": main()
