@@ -3,6 +3,11 @@
 # This is an exercise file from Python 3 Essential Training on lynda.com
 # Copyright 2010 The BearHeart Group, LLC
 
+# References
+# Python documentation, standard library
+# http://docs.python.org/3/library/stdtypes.html
+# http://docs.python.org/3/library/stdtypes.html#string-methods
+
 def main():
     s = 'this is a string'
     print(s.capitalize())
@@ -66,5 +71,9 @@ def main():
     print(newString)
     csvString = ', '.join(words)
     print(csvString)
+
+
+    myString = 'this is my fluffy string'
+    print(myString.center(40, '*'))
 
 if __name__ == "__main__": main()
