@@ -51,5 +51,20 @@ def main():
     # format with dictionary
     d = dict(alpha = a, beta = b)
     print('a:{alpha} b:{beta}'.format(**d))
+    print()
+
+    # split at separator and remove separator. Default separator is whitespace.
+    s = 'this is a string of words'
+    print(s.split())
+    print(s.split('i'))
+    # could iterate over this list of words
+    words = s.split()
+    print(words)
+
+    # join words with a colon
+    newString = ':'.join(words)
+    print(newString)
+    csvString = ', '.join(words)
+    print(csvString)
 
 if __name__ == "__main__": main()
