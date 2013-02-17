@@ -7,10 +7,15 @@ def main():
     # Open file
     # http://docs.python.org/3/library/functions.html#open
     # Explicitly specify read mode. Alternatively, if omit, default # is 'r'
-    f = open('lines.txt', 'r')
+    infile = open('lines.txt', 'r')
+    outfile = open('new.txt', 'w')
 
-    for line in f:
+    for line in infile:
+        # print to screen
         print(line, end = '')
+        # print to outfile
+        print(line, file = outfile, end = '')
 
+    print('Done.')
 
 if __name__ == "__main__": main()
