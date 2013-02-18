@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # saytime-errors.py by Bill Weinman [http://bw.org/]
 # created for Python 3 Essential Training on lynda.com
 # Copyright 2010 The BearHeart Group, LLC
@@ -18,7 +18,7 @@ class numwords():
         ), 'tens': (
             '', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'
         ), 'teens': (
-            'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen' 
+            'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'
         ), 'quarters': (
             'o\'clock', 'quarter', 'half'
         ), 'range': {
@@ -40,7 +40,7 @@ class numwords():
             s += self._words['misc']['minus'] + ' '
             n = abs(n)
         if n < 10:          # single-digit numbers
-            s += self._words['ones'][n]  
+            s += self._words['ones'][n]
         elif n < 20:        # teens
             s += self._words['teens'][n - 10]
         elif n < 100:       # tens
@@ -81,11 +81,11 @@ class saytime(numwords):
     def words(self):
         h = self._hour
         m = self._min
-        
+
         if h > 23: return self._oor     # OOR errors
         if m > 59: return self._oor
 
-        sign = self._specials['past']        
+        sign = self._specials['past']
         if self._min > 30:
             sign = self._specials['til']
             h += 1
@@ -102,12 +102,13 @@ class saytime(numwords):
             if h in (0, 12): return hword   # for noon and midnight
             else: return "{} {}".format(self.numwords(h), self._words['quarters'][m])
         if m % 15 is 0:
-            return "{} {} {}".format(self._words['quarters'][m // 15], sign, hword) 
-        return "{} {} {}".format(self.numwords(m), sign, hword) 
+            return "{} {} {}".format(self._words['quarters'][m // 15], sign, hword)
+        return "{} {} {}".format(self.numwords(m), sign, hword)
 
     def digits(self):
         "return the traditionl time, e.g., 13:42"
         return "{:02}:{:02}".format(self._hour, self._min)
+
 
 class saytime_t(saytime):   # wrapper for saytime to use time object
     """
@@ -117,6 +118,7 @@ class saytime_t(saytime):   # wrapper for saytime to use time object
     def __init__(self, t):
         self._hour = t.tm_hour
         self._min = t.tm_min
+
 
 def main():
     if len(sys.argv) > 1:
@@ -131,8 +133,8 @@ def main():
 def test():
     print("\nnumbers test:")
     list = (
-        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 19, 20, 30, 
-        50, 51, 52, 55, 59, 99, 100, 101, 112, 900, 999, 1000 
+        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 19, 20, 30,
+        50, 51, 52, 55, 59, 99, 100, 101, 112, 900, 999, 1000
     )
     for l in list:
         print(l, numwords(l).numwords())
@@ -140,7 +142,7 @@ def test():
     print("\ntime test:")
     list = (
         (0, 0), (0, 1), (11, 0), (12, 0), (13, 0), (12, 29), (12, 30),
-        (12, 31), (12, 15), (12, 30), (12, 45), (11, 59), (23, 15), 
+        (12, 31), (12, 15), (12, 30), (12, 45), (11, 59), (23, 15),
         (23, 59), (12, 59), (13, 59), (1, 60), (24, 0)
     )
     for l in list:
