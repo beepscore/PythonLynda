@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # sqlite3-crud.py by Bill Weinman [http://bw.org/]
 # This is an exercise file from Python 3 Essential Training on lynda.com
 # Copyright 2010 The BearHeart Group, LLC
@@ -10,6 +10,7 @@ def insert(db, row):
     db.commit()
 
 def retrieve(db, t1):
+    # second argument must be a list or a tuple. (t1,) is a tuple with one element.
     cursor = db.execute('select * from test where t1 = ?', (t1,))
     return cursor.fetchone()
 
