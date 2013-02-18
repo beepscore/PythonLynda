@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # test-saytime.py by Bill Weinman [http://bw.org/]
 # This is an exercise file from Python 3 Essential Training on lynda.com
 # Copyright 2010 The BearHeart Group, LLC
@@ -17,12 +17,13 @@ class TestSaytime(unittest.TestCase):
             'six', 'seven', 'eight', 'nine', 'ten'
         )
         for i, n in enumerate(self.nums):
+            # module saytime, class numwords, method numwords()
             self.assertEqual(saytime.numwords(n).numwords(), words[i])
 
     def test_time(self):
         time_tuples = (
             (0, 0), (0, 1), (11, 0), (12, 0), (13, 0), (12, 29), (12, 30),
-            (12, 31), (12, 15), (12, 30), (12, 45), (11, 59), (23, 15), 
+            (12, 31), (12, 15), (12, 30), (12, 45), (11, 59), (23, 15),
             (23, 59), (12, 59), (13, 59), (1, 60), (24, 0)
         )
         time_words = (
