@@ -7,6 +7,7 @@ import time
 
 __version__ = "1.1.0"
 
+# numwords inherits from object
 class numwords():
     """
         return a number as words,
@@ -61,6 +62,8 @@ class numwords():
         "Return the number as a number"
         return str(self.__number);
 
+
+# saytime inherits from numwords
 class saytime(numwords):
     """
         return the time (from two parameters) as words,
@@ -109,6 +112,8 @@ class saytime(numwords):
         "return the traditionl time, e.g., 13:42"
         return "{:02}:{:02}".format(self._hour, self._min)
 
+
+# saytime_t inherits from saytime
 class saytime_t(saytime):   # wrapper for saytime to use time object
     """
         return the time (from a time object) as words
