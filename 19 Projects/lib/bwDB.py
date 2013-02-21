@@ -1,11 +1,18 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # bwTL - BW's template library
+# for using sqlite3
 # by Bill Weinman [http://bw.org/]
 # Copyright 1995-2010 The BearHeart Group LLC
 
 import sqlite3
 
 __version__ = '1.0.3'
+
+# The methods below use 'docstrings'
+# If the first line in a method or function is a string,
+# Python will use it for documentation.
+# ''' ''' makes a multiline string
+# Reference http://stackoverflow.com/questions/2504411/proper-indentation-for-python-multiline-strings
 
 class bwDB:
     def __init__(self, **kwargs):
@@ -166,6 +173,8 @@ class bwDB:
             self._db.close()
             del self._dbFilename
 
+# To run unit tests from command line, add argument 'test'
+# $ ./bwDB.py test
 def test():
     import os
     fn = ':memory:'     # in-memory database
