@@ -4,6 +4,7 @@
 # CGI/SSI version for bw.org
 #
 
+# import saytime as a module
 import time, saytime
 
 t = time.localtime()
@@ -13,5 +14,4 @@ print(
     saytime.saytime_t(t).words() +
     time.strftime(', on %A, %d %B %Y.')
 )
-
 

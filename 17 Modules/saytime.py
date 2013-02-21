@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # saytime.py by Bill Weinman [http://bw.org/]
 # created for Python 3 Essential Training on lynda.com
 # Copyright 2010 The BearHeart Gorup, LLC
@@ -6,6 +6,16 @@ import sys
 import time
 
 __version__ = "1.1.0"
+
+# To make code useable as a module, put executable statements inside a class.
+# A module can have more than one class.
+# Also on last line put
+# if __name__ == "__main__": main()
+# This way, when code isn't imported as a module, main will be called.
+
+# To run unit tests from command line, add argument 'test'
+# $ ./saytime.py test
+
 
 # numwords inherits from object
 class numwords():
@@ -132,6 +142,7 @@ def main():
             except TypeError: print("Invalid time ({})".format(sys.argv[1]))
     else:
         print(saytime_t(time.localtime()).words())
+
 
 def test():
     print("\nnumbers test:")
