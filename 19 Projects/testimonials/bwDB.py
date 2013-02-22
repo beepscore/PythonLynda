@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # bwTL - BW's template library
 # by Bill Weinman [http://bw.org/]
 # Copyright 1995-2010 The BearHeart Group LLC
@@ -12,7 +12,7 @@ class bwDB:
         '''
             db = bwDB( [ table = ''] [, filename = ''] )
             constructor method
-                table is for CRUD methods 
+                table is for CRUD methods
                 filename is for connecting to the database file
         '''
         # see filename setter below
@@ -69,7 +69,7 @@ class bwDB:
         return c.fetchone()[0]
 
     def getrec(self, id):
-        ''' 
+        '''
             db.getrec(id)
             get a single row, by id
         '''
@@ -78,7 +78,7 @@ class bwDB:
         return c.fetchone()
 
     def getrecs(self):
-        ''' 
+        '''
             db.getrecs(id)
             get all rows, returns a generator of Row factories
         '''
@@ -180,7 +180,7 @@ def test():
     ### for file-based database
     # try: os.stat(fn)
     # except: pass
-    # else: 
+    # else:
     #     print('Delete', fn)
     #     os.unlink(fn)
 
@@ -210,7 +210,7 @@ def test():
     newid = db.insert( dict( string = 'extra' ) )
     print('(id is {})'.format(newid))
     print( dict( db.getrec(newid) ) )
-    print('Now delete it')    
+    print('Now delete it')
     db.delete(newid)
     for r in db.getrecs(): print(dict(r))
     db.close()

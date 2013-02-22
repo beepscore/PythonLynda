@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # bwTL - BW's template library
 # by Bill Weinman [http://bw.org/]
 # Copyright 1995-2010 The BearHeart Group LLC
@@ -87,9 +87,9 @@ def bwtl_test():
         ft.var('three', 'ham')
         ft.var('four', 'rubber chicken')
         ft.var('five', '55555')
-    
+
         print(str("ft.readline: " + ft.readline()).strip())
-        
+
         for l in ft.readlines():
             print(l.strip())
 

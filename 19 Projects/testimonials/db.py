@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # db.py by Bill Weinman <http://bw.org/contact/>
 # Copyright (c) 2010 The BearHeart Group, LLC
 # created 2010-04-23
@@ -15,6 +15,7 @@ from bwConfig import configFile
 __version__ = "1.1.3"
 
 # namespace container for global variables
+# use to manage state of web app.
 g = dict(
     VERSION = 'db.py version {}'.format(__version__),
     config_file = 'db.conf',
@@ -29,6 +30,7 @@ g = dict(
 
 def main():
     init()
+    # a is an action.
     if 'a' in g['vars']: dispatch()
     main_page()
 
@@ -139,7 +141,7 @@ def page(pagename, title = ''):
     var('VERSION', g['VERSION'])
     set_stack_vars()
     for p in ( 'header', pagename, 'footer' ):
-        try: 
+        try:
             tl.file(os.path.join(htmldir, p + file_ext))
             for line in tl.readlines(): print(line, end='') # lines are already terminated
         except IOError as e:
@@ -152,7 +154,7 @@ def getpage(p):
     htmldir = g['config']['htmlDir']
     file_ext = g['template_ext']
     a = ''
-    try: 
+    try:
         tl.file(os.path.join(htmldir, p + file_ext))
         for line in tl.readlines(): a += line # lines are already terminated
     except IOError as e:
@@ -172,6 +174,7 @@ def add():
     db.insert(rec)
     message('Record ({}) added'.format(rec['byline']))
     main_page()
+
 def edit():
     id = g['vars'].getfirst('id')
     rec = g['db'].getrec(id)

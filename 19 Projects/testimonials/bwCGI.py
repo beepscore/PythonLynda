@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # bwCGI.py by Bill Weinman <http://bw.org/contact/>
 # Copyright (c) 1995-2010 The BearHeart Group, LLC
 #

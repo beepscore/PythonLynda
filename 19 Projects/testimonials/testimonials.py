@@ -1,10 +1,11 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # testimonials.py by Bill Weinman <http://bw.org/contact/>
 # Copyright (c) 2010 The BearHeart Group, LLC
 # created 2010-04-23
 #
 
 from bwDB import bwDB
+# bwConfig reads a formatted configuration file
 from bwConfig import configFile
 import random
 import os
@@ -17,6 +18,7 @@ g = dict(
 )
 
 def main():
+    ''' main() contains most of this web application's logic. '''
     init()
     db = g['db']
     idlist = []
