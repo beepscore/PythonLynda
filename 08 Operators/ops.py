@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/env python3
 # ops.py by Bill Weinman [http://bw.org/]
 # This is an exercise file from Python 3 Essential Training on lynda.com
 # Copyright 2010 The BearHeart Group, LLC
@@ -37,7 +37,7 @@ def main():
     b(0xff >> 3)
     b(x >> 3)
 
-    #ones complement, operates on implementation word size, > 8 bits 
+    #ones complement, operates on implementation word size, > 8 bits
     b(~x)
 
     print()
@@ -87,7 +87,7 @@ def main():
     print()
 
     #########################################
-    
+
     print('range(start, stop[, step]) is a type')
     print('range doesn\'t include element specified by stop')
     # http://docs.python.org/3/library/stdtypes.html#typesseq-range

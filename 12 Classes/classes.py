@@ -1,23 +1,23 @@
-#!/usr/local/bin/python3
+#!/usr/bin/env python3
 # classes.py by Bill Weinman [http://bw.org/]
 # This is an exercise file from Python 3 Essential Training on lynda.com
 # Copyright 2010 The BearHeart Group, LLC
 
 class Animal:
-    def clothes(self): 
+    def clothes(self):
         print('I have nice clothes')
 
-    def talk(self): 
+    def talk(self):
         print('I have something to say!')
 
-    def walk(self): 
+    def walk(self):
         print('Hey! I\'m walkin\' here!')
 
 
 class Dog(Animal):
     def bark(self):
-        print('Woof!') 
-    
+        print('Woof!')
+
     def fur(self):
         print('The dog has brown and white fur')
 
@@ -47,13 +47,13 @@ class Duck(Animal):
         else:
             self._color = color
 
-    def bark(self): 
-        print('The duck cannot bark') 
+    def bark(self):
+        print('The duck cannot bark')
 
-    def fur(self): 
+    def fur(self):
         print('The duck has feathers')
 
-    def quack(self): 
+    def quack(self):
         print('Quaaack!', self._value)
 
     # override super's definition, but call super also
@@ -89,7 +89,7 @@ class Wombat(Animal):
                 print('color must be a string')
         else:
             self._variables['color'] = color
-            
+
 
 def in_the_forest(anAnimal):
     anAnimal.bark()

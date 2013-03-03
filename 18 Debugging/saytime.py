@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # saytime.py by Bill Weinman [http://bw.org/]
 # created for Python 3 Essential Training on lynda.com
 # Copyright 2010 The BearHeart Gorup, LLC

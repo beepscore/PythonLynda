@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/env python3
 # decorators.py by Bill Weinman [http://bw.org/]
 # This is an exercise file from Python 3 Essential Training on lynda.com
 # Copyright 2010 The BearHeart Group, LLC
